@@ -70,12 +70,14 @@ opartuuidb=`sudo blkid -o export /dev/sdb1 | grep PARTUUID`
 opartuuidr=`sudo blkid -o export /dev/sdb2 | grep PARTUUID`
 npartuuidb=`sudo blkid -o export $partBoot | grep PARTUUID`
 npartuuidr=`sudo blkid -o export $partRoot | grep PARTUUID`
-sudo sed -i "s/$opartuuidr/$npartuuidr/g" /tgt_boot/cmdline.txt 
-sudo sed -i "s/$opartuuidb/$npartuuidb/g" /tgt_Root/etc/fstab
-sudo sed -i "s/$opartuuidr/$npartuuidr/g" /tgt_Root/etc/fstab
+echo "$opartuuidb"
+echo "$npartuuidb"
+sudo sed -i "s/${opartuuidr}/${npartuuidr}/g" /home/pi/backupimg/tgt_boot/cmdline.txt 
+sudo sed -i "s/${opartuuidb}/${npartuuidb}/g" /home/pi/backupimg/tgt_Root/etc/fstab
+sudo sed -i "s/${opartuuidr}/${npartuuidr}/g" /home/pi/backupimg/tgt_Root/etc/fstab
 
-if [ ! -f /tgt_boot/temporaryfiles.txt ]; then
-  sudo touch /tgt_boot/temporaryfiles.txt
+if [ ! -f /home/pi/backupimg/tgt_boot/temporaryfiles.txt ]; then
+  sudo touch /home/pi/backupimg/tgt_boot/temporaryfiles.txt
   echo "create temporaryfiles.txt"
 fi
 

@@ -1,4 +1,4 @@
-# rpi-backup
+# backup
 在linux虚拟机上备份树莓派镜像
 
 1 在官网https://www.raspberrypi.org/downloads/raspbian/下载Raspbian Stretch Lite  <br>
@@ -9,3 +9,8 @@
 6 df -h查看sd卡是否挂载为sdb，如果不是要修改代码里sdb相应的地方 <br>
 7 sudo chmod +x rpi-backup <br>
 8 sudo ./rpi-backup <br>
+
+#expand_sd.sh
+自动扩容脚本
+1 将此脚本设置为开机自启且添加可执行权限<br>
+2 通过backup备份后，备份后的镜像就会自动扩容

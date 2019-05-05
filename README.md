@@ -3,7 +3,7 @@
 backup 备份脚本
 ----------------
 
-1 在官网https://www.raspberrypi.org/downloads/raspbian/下载Raspbian Stretch Lite  <br>
+1 在官网https://www.raspberrypi.org/downloads/raspbian/ 下载Raspbian Stretch Lite  <br>
 2 安装vm虚拟机  <br>
 3 安装Raspbian系统，系统内存应大于需要备份镜像的3倍，建议30G以上 <br>
 4 将需要备份的镜像sd卡插到电脑上（用读卡器） <br>

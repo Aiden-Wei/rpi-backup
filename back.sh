@@ -29,12 +29,12 @@ if [ ! -f raspberrypi.img ]; then
   echo "create raspberrypi.img"
 fi
 
+sudo mount -t vfat -o uid=pi,gid=pi,umask=0000 /dev/sdb1 ./src_boot/
+sudo mount -t ext4 /dev/sdb2 ./src_Root/
+
 sudo parted raspberrypi.img --script -- mklabel msdos
 sudo parted raspberrypi.img --script -- mkpart primary fat32 8192s 122479s
 sudo parted raspberrypi.img --script -- mkpart primary ext4 122880s -1
-
-sudo mount -t vfat -o uid=pi,gid=pi,umask=0000 /dev/sdb1 ./src_boot/
-sudo mount -t ext4 /dev/sdb2 ./src_Root/
 
 loopdevice=`sudo losetup -f --show raspberrypi.img`
 device=`sudo kpartx -va $loopdevice | sed -E 's/.*(loop[0-9])p.*/\1/g' | head -1`

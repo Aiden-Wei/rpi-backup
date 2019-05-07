@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt-get install -y dosfstools dump parted kpartx
 start_tm=`date +%s%N`
 if [ -d backupimg ]; then
   sudo rm -rf backupimg

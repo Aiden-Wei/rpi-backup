@@ -1,6 +1,6 @@
 在linux虚拟机上备份树莓派镜像
 ===========================
-backup 备份脚本
+back.sh 备份脚本
 ----------------
 
 1 在官网https://www.raspberrypi.org/downloads/raspbian/ 下载Raspbian Stretch Lite  <br>

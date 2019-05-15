@@ -41,6 +41,7 @@ device=`sudo kpartx -va $loopdevice | sed -E 's/.*(loop[0-9])p.*/\1/g' | head -1
 device="/dev/mapper/${device}"
 partBoot="${device}p1"
 partRoot="${device}p2"
+sleep 5
 sudo mkfs.vfat -n boot $partBoot
 sudo mkfs.ext4 $partRoot
 
